@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel {
+  margin-top: 200px;
+  position: relative;
+}
+
+.carousel__slide {
+  display: none;
+}
+
+.carousel__slide.carousel-slide--active {
+  display: block;
+}
+
+.carousel__slide img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel__arrows {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 24px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #bad;
+  font-size: 32px;
+}
+
+.carousel__pagination {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.carousel__pagination button {
+  width: 16px;
+  height: 16px;
+  background-color: #bad;
+  border-radius: 50%;
+  border: none;
+}
+
+.carousel__pagination .active {
+  background-color: rebeccapurple;
+}
