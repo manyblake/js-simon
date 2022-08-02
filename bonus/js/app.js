@@ -51,7 +51,11 @@ function nextSlide() {
   nextButton.classList.add(`active`);
 }
 
-nextArrow.addEventListener("click", nextSlide);
+nextArrow.addEventListener("click", function () {
+  nextSlide();
+  clearInterval(interval);
+  interval = setInterval(nextSlide, 3000);
+});
 
 prevArrow.addEventListener("click", function () {
   const slideActive = slidesElements[currentIndex];
@@ -88,4 +92,4 @@ function nextSlide() {
   nextButton.classList.add(`active`);
 }
 
-const interval = setInterval(nextSlide, 3000);
+let interval = setInterval(nextSlide, 3000);
