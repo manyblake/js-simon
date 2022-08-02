@@ -1,5 +1,6 @@
 const randomNumbers = [];
 const userNumbers = [];
+const numberGuessed = [];
 let score = 0;
 
 function randomNumbersGenerator() {
@@ -17,6 +18,8 @@ function tryToGuess() {
     if (userEntry === NaN) {
       userNumbers.push(`100`);
       console.log(userNumbers);
+    } else if (userNumbers.includes(userEntry)) {
+      alert(`Hai già inserito questo numero`);
     } else if (userEntry <= 99) {
       userNumbers.push(userEntry);
     }
@@ -25,10 +28,15 @@ function tryToGuess() {
   for (let i = 0; i < 5; i++) {
     if (randomNumbers.includes(userNumbers[i])) {
       score++;
+      numberGuessed.push(userNumbers[i]);
     }
   }
-  alert(`Hai indovinato ${score} numeri`);
-  console.log(userNumbers, randomNumbers);
+
+  if (!numberGuessed[0]) {
+    alert(`Non hai indovinato nessun numero`);
+  } else {
+    alert(`Hai indovinato ${numberGuessed} per un totale di ${score} numeri`);
+  }
 }
 
 randomNumbersGenerator();
